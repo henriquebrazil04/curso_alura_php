@@ -1,9 +1,9 @@
-<html>
-    
-<?php
-$nome = $_GET["nome"];
-$preco = $_GET["preco"];
+<?php 
+    include("cabecalho.php");
 
+    $nome = $_GET["nome"];
+    $preco = $_GET["preco"];
 ?>
-        Produto <?=$nome;?>, cujo preco eh <?=$preco;?> adicionado com sucesso!
-</html>
+                <p class="alert-success">Produto <?=$nome;?>, cujo preco eh <?=$preco;?> adicionado com sucesso!</p>
+                
+<?php include("rodape.php"); ?>
