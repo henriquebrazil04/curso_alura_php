@@ -1,19 +1,23 @@
 <?php 
     include("cabecalho.php");
+    include("lib/conecta.php");    
+    include("lib/banco-categoria.php");
 
 ?>
     <h1>Formulário de cadastro</h1>
 
 <?php
 
-    if(array_key_exists("adicionado", $_GET) && $_GET['adicionado']=='false') { ?>
+    $categorias = listaCategorias($conexao);
+
+    if(array_key_exists("adicionado", $_POST) && $_POST['adicionado']=='false') { ?>
             <p class="text-danger">Erro ao adicionar produto!</p>
     
     <?php }
 
 ?>
     
-    <form action="adiciona-produto.php">
+    <form action="adiciona-produto.php" method="post">
     
     <table>
         <tr>
@@ -30,11 +34,22 @@
             <td>Descrição</td>
             <td><textarea class="form-control" name="descricao"></textarea></td>
         </tr>
+        <tr>
+            <td>
+<?php
+            foreach ($categorias as $categoria): ?>
+
+                <input type="radio" name="categoria_id" value="<?=categoria['id']?>"><?=$categoria['nome']?></br>
+                
+<?php       endforeach; ?>
+               
+            </td>
+        </tr>                
         
         <tr>
             <td><input class="bt btn-primary" type="submit" value="Cadastrar" /></td>
         </tr>
-            
+
     </form>        
         
     </table>
