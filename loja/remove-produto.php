@@ -1,8 +1,8 @@
 <?php 
-include("conecta.php");
+include("lib/conecta.php");
 include("lib/banco-produto.php");
 
-$id = $_POST['id'];
+$id = $_GET['id'];
 
 removeProduto($conexao, $id);
 

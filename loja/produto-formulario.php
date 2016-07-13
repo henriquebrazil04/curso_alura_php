@@ -35,14 +35,15 @@
             <td><textarea class="form-control" name="descricao"></textarea></td>
         </tr>
         <tr>
+            <td>Categoria</td>
             <td>
+                <select>
+                    
 <?php
             foreach ($categorias as $categoria): ?>
-
-                <input type="radio" name="categoria_id" value="<?=categoria['id']?>"><?=$categoria['nome']?></br>
-                
+                    <option value="<?=$categoria['id']?>"><?=$categoria['nome']?></option>
 <?php       endforeach; ?>
-               
+                </select>               
             </td>
         </tr>                
         
