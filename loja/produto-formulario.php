@@ -10,7 +10,7 @@
 
     $categorias = listaCategorias($conexao);
 
-    if(array_key_exists("adicionado", $_POST) && $_POST['adicionado']=='false') { ?>
+    if(array_key_exists("adicionado", $_GET) && $_GET['adicionado']=='false') { ?>
             <p class="text-danger">Erro ao adicionar produto!</p>
     
     <?php }
@@ -43,7 +43,7 @@
         <tr>
             <td>Categoria</td>
             <td>
-                <select>
+                <select name="categoria_id">
                     
 <?php
             foreach ($categorias as $categoria): ?>
