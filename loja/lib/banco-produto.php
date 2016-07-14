@@ -11,8 +11,8 @@
         return $produtos;
     }
     
-    function insereProduto($conexao, $nome, $preco, $descricao, $categoria_id) {
-    $query = "insert into produtos (nome, preco, descricao, categoria_id) values ('{$nome}', {$preco}, '{$descricao}', {$categoria_id})";
+    function insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado) {
+    $query = "insert into produtos (nome, preco, descricao, categoria_id, usado) values ('{$nome}', {$preco}, '{$descricao}', {$categoria_id}, {usado})";
     
     echo $query;
     
