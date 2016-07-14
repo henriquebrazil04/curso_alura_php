@@ -36,4 +36,4 @@
  ?>   
     </table>
 <?php
-php_include("rodape.php");
+include("rodape.php");
