@@ -24,3 +24,9 @@
         $query = "delete from produtos where id = {$id}";
         return mysqli_query($conexao, $query);
 }
+
+function buscaProduto($conexao, $id) {
+    $query = "select * from produtos where id = {$id}";
+    $resultado = mysqli_query($conexao, $query);
+    return mysqli_fetch_assoc($resultado);
+}

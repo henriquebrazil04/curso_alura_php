@@ -28,6 +28,9 @@
             <td><?= substr($produto['descricao'],0,40) ?></td>
             <td><?= $produto['categoria_nome'] ?></td>
             <td>
+                <a href="produto-altera-formulario.php?id=<?=$produto['id']?>" class="btn btn-primary">Alterar</a>
+            </td>
+            <td>
                 <a href="remove-produto.php?id=<?=$produto['id']?>" class="text-danger">Remover</a>
             </td>
         </tr>
